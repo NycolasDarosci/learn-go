@@ -1,0 +1,11 @@
+- efficient compiling (not take minutes to compile a code when you want to test)
+- efficient execution
+- easy to code
+
+- strong, static type system (everything has a type)
+- C inspired syntax
+- compiled (we need to compile the code to execute)
+- multi paradigm (object oriented, struct programming, imperative programming. It all up to you)
+- garbage collected (process that deletes data that not using anymore. No one is pointing at memory space, so it's deleted)
+- creates a single binary compilation (when compile, creates one file. One executable output for code)
+- new versions will be always fully backwards compatible(new version is compatible with the previous versions..).
