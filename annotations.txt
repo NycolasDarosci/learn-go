@@ -9,3 +9,169 @@
 - garbage collected (process that deletes data that not using anymore. No one is pointing at memory space, so it's deleted)
 - creates a single binary compilation (when compile, creates one file. One executable output for code)
 - new versions will be always fully backwards compatible(new version is compatible with the previous versions..).
+
+
+- every file must be within a package(folder)
+- the project must contains an entry point, where the code will init and run (package main and function main)
+
+
+- it can generate executable binary files for different platforms and operating systems
+    - it can compile to WebAssembly (WASM, is ability of the web platform, like browsers, to execute native code that can be written from differents languages)
+        Ex: games, criptocurrencies, Artificial inteligence
+    - it can transpile to frontend javascript (GopherJS)
+- multi platform (creating app for a platform, need to pick both DOS and the architecture)
+
+- Go (Golang) GOOS and GOARCH https://gist.github.com/asukakenji/f15ba7e588ac42795f421b48b8aede63
+
+- Common use cases
+    - Web services
+    - Web applications
+    - DevOps
+    - Desktop UI
+    - Machine Learning
+    ...
+
+
+Language types
+
+    Interpreted Languages --> Source Code (javascript, python..)
+
+    Intermediate Compiled Languages --> Bytecode (Java, C#)
+
+    Compiled languages --> Machine Code (code execute directly in one CPU)
+
+
+syntax
+
+    Code blocks in {}
+    No styling freedom
+    does not need semi-colon (;) unless you need. To separate sentences
+        Ex: print("hello"); print("another print in the same line")
+    Case sensitive language
+    Strongly typed
+    No object oriented
+
+Rules
+
+    One file act as the entry point with a main function
+
+    folder is a package (pasta é um pacote)
+
+    within a file
+        Variables
+        functions
+        Type declarations
+        Methods declarations
+
+Modules and CLI
+
+    Module is a project! is a group of packages
+    it contains go.mod file with configuration and metadata
+
+    CLI manipulates the module
+        go mod init
+        go build
+        go run 
+        go test
+        go get
+
+
+Workspaces and CLI
+
+    is a new kind of super module app
+
+    it contains a go.work file with configuration and metadata including which module to use
+
+    CLI manipulates the workspaces
+
+        go work init
+
+    workspaces--
+        modules--
+            packages--
+
+
+Data types goes after identifier
+Variables have nil by default
+Constants can be only bool, string or numbers
+
+Immutable variable x constant
+
+    Immutable variable is a varible, so it is an a space alocate in memory
+    immutable was set and no one can not change the value
+
+    constant: The compiler finds a constant reference, it goes to the definition copy the value and paste the value
+    "copy and paste"
+    it's not in a memoty, it is a fix value
+
+variable with initialization
+    var name string
+    name = "John"
+
+or
+
+initialization shortcut 
+    otherName := "Mike"
+
+
+Types
+    string
+    numbers values: int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64
+        uint - unsigned int - only positive numbers
+    floating values: float32, float64
+    bool
+        == != < > <= >= && || !
+    pointers
+        pointer is we have a variable, and then we have another variable that is pointing to the original one.
+
+
+    
+    numbers
+
+        id := 4
+        price := 45.4
+
+        priceAsInt := int(price)
+        idAsFloat := float32(id)
+
+
+    Strings
+
+        str1 := "Just a text"
+
+        str2 := "Every text
+            is multiline
+            by default"
+
+
+    Collections
+
+        Arrays: fixed length
+            [5]int
+
+        Slices: similar to a dynamic length array,
+        but they are actually chunck of arrays
+            []int
+
+        Maps: key/value dictionaries
+            map[keytype]valuetype
+
+        Generics
+
+Visibility
+    variables, constants, functions..
+
+    if it's camelCase = private to the package
+
+        func notExported() {}
+
+    if it's TitleCase = public and exported to others packages
+
+        func Exported() {}
+
+Variables and lambda functions can be:
+
+    - Module Scoped
+    - Function Scoped
+    - Block Scoped
+
